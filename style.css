@@ -1,0 +1,300 @@
+.hero-section {
+    height: 100vh;
+    background-image: url('images/202204291054249293_d.jpg');
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 30px 20px;
+    color: white;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 0;
+}
+/* intro */
+
+.intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.intro h2 {
+    margin-bottom: 30px; /* 점선 포함 전체 아래 여백 */
+    position: relative; /* after 요소 위치 기준점 */
+}
+
+.intro h2::after {
+    content: '';
+    display: block;
+    width: 300px;
+    border-bottom: 1px dotted #ccc;
+    position: absolute;
+    bottom: -15px;
+    left: 50%; /* 왼쪽에서 50% 지점으로 이동 */
+    transform: translateX(-50%); /* 자신의 길이의 50 %만큼 왠쪽으로 이동해 중앙 정렬 */
+}
+
+
+/* bridge-groom */
+
+.bridge-groom {
+    text-align: center;
+    font-size: 1.3em;
+    margin-bottom: 60px;
+}
+
+
+/* contact-section */
+
+.contact-section {
+    align-items: baseline; /* 제목과 내용의 텍스트 밑줄을 맞추는 코드 */
+    gap: 30px; /* 제목과 연락처 묶음 사이의 간격 */
+    padding: 40px 20px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 1.5em;
+    flex-shrink: 0; /* 공간이 좁아져도 글자가 줄어들지 않도록 */
+    position: relative;
+}
+
+.contact-section h2::after {
+    content: '';
+    display: block;
+    width: 300px;
+    border-bottom: 1px dotted #ccc;
+    position: absolute;
+    bottom: -15px;
+    left: 50%; /* 왼쪽에서 50% 지점으로 이동 */
+    transform: translateX(-50%); /* 자신의 길이의 50 %만큼 왠쪽으로 이동해 중앙 정렬 */
+
+}
+
+.contact-grid {
+    display: flex;
+    width: 100%;
+    gap: 20px; /* 신랑측과 신부측 열 사이의 간격 */
+}
+
+.contact-column {
+    flex: 1;
+    text-align: center;
+}
+
+.person-info {
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.name {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #111;
+    margin: 5px 0;
+}
+
+/* calender */
+
+.calendar-container {
+    text-align: center;   
+}
+
+.calendar-container h3 {
+    margin-bottom: 20px;
+}
+
+.divider {
+    border-bottom: 1px dotted #ccc;
+    width: 300px;
+    margin: 10px auto 30px; /* 좌우는 오토 조절 위아래는 10, 20 여백 */
+} /* 점선 */
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 40px;
+    gap: 15px; /* 행 열 모두 적용 */
+    align-items: center;
+}
+
+.day-name, .day {
+    display: flex;
+    justify-content: center; /* 가로축 정렬 */
+    align-items: center; /* 세로축 정렬 */
+    padding: 10px 0;
+}
+
+.sunday {
+    color: #d4acac;
+}
+
+.saturday {
+    color: #a2b2c2;
+}
+
+/* 결혼식 날짜 스타일 */
+.wedding-day {
+    position: relative; /* 아래 '낮 1시' 텍스트의 위치 기준점 */
+    
+    /* 1. 하트 모양 배경 이미지 (SVG) */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3cpath fill='%23d4acac' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px; /* 하트 크기 조절 */
+    
+    /* 2. 숫자 스타일 */
+    color: white; /* 숫자 흰색 */
+    font-weight: bold;
+    width: 50px; /* 하트 크기와 동일하게 */
+    height: 45px; /* 하트 크기와 비슷하게 */
+    
+    /* 3. 숫자를 하트 정중앙에 배치 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* '낮 1시' 텍스트 추가 */
+.wedding-day::after {
+    content: '낮 1시';
+    position: absolute;
+    bottom: -4px; /* 하트 아래로 20px 만큼 이동 */
+    left: 50%;
+    transform: translateX(-50%); /* 완벽한 수평 중앙 정렬 */
+    
+    font-size: 0.8em;
+    color: #888;
+    white-space: nowrap; /* 글자가 줄바꿈되지 않도록 설정 */
+}
+
+/* countdown */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 55px;
+}
+
+.time-block {
+    background-color: #f5f1ee;
+    border: 1px solid #e9e3e0;
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-align: center;
+}
+
+.time-block span {
+    display: block;
+}
+
+#days, #hours, #minutes, #seconds {
+    font-size: 1em;
+    color:#686363;
+}
+
+.label {
+    font-size: 0.8em;
+    color: #888;
+}
+
+.colon {
+    font-size: 1.2em;
+    color: #878585;
+}
+
+/* gallery */
+
+.gallery {
+    text-align: center;
+    /* 자식 요소(gallery-block)들을 가로로 배치하기 */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 55px;
+}
+
+.divider2 {
+    border-bottom: 1px dotted #ccc;
+    width: 300px;
+    margin: 2.5px auto 30px; /* 좌우는 오토 조절 위아래는 10, 20 여백 */
+} /* 점선 */
+
+/* 위에 30 px 공간 이미 잇음 */
+
+.gallery-block {
+    border: 1px solid #111;
+    flex-basis: calc(50% - 10px);
+    height: 250px;
+    box-sizing: border-box;
+}
+
+/* location */
+
+.location {
+    text-align: center;
+}
+
+.location iframe {
+    width: 100%; /* 너비를 부모 요소에 꽉 채움 (반응형) */
+    max-width: 600px;
+    height: 350px;
+
+    /* 지도 중앙에 정렬 */
+    display: block;
+    margin: 0 auto;
+}
+
+.map-buttons {
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 20px; /* 버튼 안쪽 여백 */
+    border: none; /* 테두리 제거 */
+    border-radius: 5px;
+    color: white; /* 글자색 흰색 */
+    font-size: 0.9em;
+    font-weight: bold;
+    text-decoration: none; /* 링크 밑줄 제거 */
+    text-align: center;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+.kakao { background-color: #FEE500; color: #191919; } /* 카카오 노란색 */
+.google { background-color: #edece6; color: #191919; } 
+.naver { background-color: #05bb72; color: #191919; } 
