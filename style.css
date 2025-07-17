@@ -33,7 +33,13 @@ body {
 .container {
     max-width: 700px;
     margin: 0 auto;
-    padding: 0 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.section {
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 /* intro */
 
@@ -246,12 +252,6 @@ body {
     gap: 10px;
     margin-bottom: 55px;
 }
-
-.divider2 {
-    border-bottom: 1px dotted #ccc;
-    width: 300px;
-    margin: 2.5px auto 30px; /* 좌우는 오토 조절 위아래는 10, 20 여백 */
-} /* 점선 */
 
 /* 위에 30 px 공간 이미 잇음 */
 
