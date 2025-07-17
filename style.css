@@ -3,6 +3,7 @@ body {
     font-family: "Gowun Dodum", sans-serif;
     background-color: #fdfaf6;
     color: #4e4e4e;
+    
 }
 
 .hero-section {
@@ -61,8 +62,10 @@ section {
 .section-title::after {
     content: '';
     display: block;
-    width: 300px;
-    border-bottom: 1px dotted #ccc;
+    width: 350px;
+    height: 2px; /* 점선이 그려질 높이 */
+    background-image: radial-gradient(circle, #ccc 1px, transparent 1px);
+    background-size: 8px 100%; /* 간격 조절의 핵심 */
     position: absolute;
     bottom: -15px;
     left: 50%;
@@ -279,3 +282,90 @@ section {
 .kakao { background-color: #FEE500; color: #191919; } /* 카카오 노란색 */
 .google { background-color: #edece6; color: #191919; } 
 .naver { background-color: #05bb72; color: #191919; } 
+
+/* 마음 전하실 곳 섹션 */
+
+.account-info .account-guide {
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 1.8; /* 텍스트 줄 사이의 거리를 설정 */
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.accordion {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    margin-bottom: 15px;
+}
+
+.accordion-header {
+    background-color: white;
+    padding: 18px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.accordion-header span {
+    font-size: 1.1em;
+}
+
+.accordion-header .fa-chevron-down {
+    transition: transform all 0.3s ease;
+}
+
+.accordion-content {
+    background-color: #fcf8f4;
+    border-radius: 0 0 10px 10px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 25px;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.accordion-content .account-details:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.accordion-content p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.accordion-content .account-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.copy-btn {
+    background-color: #e9e3e0;
+    color: #555;
+    border: none;
+    border-radius: 5px;
+    padding: 6px 12px;
+    font-size: 0.8em;
+    cursor: pointer;
+}
+
+.accrodion-item.active .accordion-header {
+    border-radius: 10px 10px 0 0;
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+    padding: 25px;
+}
+
+.accordion-item.active .fa-chevron-down {
+    transform: rotate(180deg);
+}

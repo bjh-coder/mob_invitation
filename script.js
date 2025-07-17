@@ -41,3 +41,35 @@ for (let i = 1; i <= lastDate; i++) {
 
 // 4. 생성된 HTML을 실제 페이지에 삽입
 calendarGrid.innerHTML = html;
+
+
+// 계좌 아코디언 기능
+
+const accordionItems = document.querySelectorAll('.accordion-item');
+
+accordionItems.forEach(item => {
+    const header = item.querySelector('.accordion-header');
+    header.addEventListener('click', () => {
+        // 'active' 클래스를 토글 (추가/제거)
+        item.classList.toggle('active');
+    });
+});
+
+// 계좌번호 복사 기능
+const copyButtons = document.querySelectorAll('.copy-btn');
+
+copyButtons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        // 바로 옆 계좌번호 텍스트를 찾음
+        const accountNumberSpan = e.target.previousElementSibling;
+        const textToCopy = accountNumberSpan.textContent;
+
+        // 클립보드에 복사
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            alert('계좌번호가 복사되었습니다.');
+        }).catch(err => {
+            console.error('복사 실패:', err);
+            alert('복사에 실패했습니다.');
+        });
+    });
+});
