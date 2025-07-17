@@ -1,3 +1,10 @@
+body {
+    margin: 0;
+    font-family: "Gowun Dodum", sans-serif;
+    background-color: #fdfaf6;
+    color: #4e4e4e;
+}
+
 .hero-section {
     height: 100vh;
     background-image: url('images/202204291054249293_d.jpg');
@@ -60,7 +67,6 @@
     margin-bottom: 60px;
 }
 
-
 /* contact-section */
 
 .contact-section {
@@ -70,6 +76,7 @@
 }
 
 .contact-section h2 {
+    font-family: "Gowun Dodum", sans-serif;
     text-align: center;
     font-size: 1.5em;
     flex-shrink: 0; /* 공간이 좁아져도 글자가 줄어들지 않도록 */
@@ -111,7 +118,7 @@
 
 .name {
     font-size: 1.5em;
-    font-weight: bold;
+    font-weight: 500;
     color: #111;
     margin: 5px 0;
 }
@@ -249,10 +256,11 @@
 /* 위에 30 px 공간 이미 잇음 */
 
 .gallery-block {
-    border: 1px solid #111;
     flex-basis: calc(50% - 10px);
     height: 250px;
     box-sizing: border-box;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border: none;
 }
 
 /* location */
