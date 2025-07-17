@@ -48,22 +48,26 @@ section {
     margin-bottom: 60px;
 }
 
-.intro h2 {
-    margin-bottom: 30px; /* 점선 포함 전체 아래 여백 */
-    position: relative; /* after 요소 위치 기준점 */
+.section-title {
+    display: block;
+    width: 100%;
+    font-family: "Gowun Dodum", sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    margin:0 auto 50px auto; /* 점선이 들어갈 공간 포함 아래 여백 */
+    position: relative; /* ::after 가상 요소의 위치 기준점 */
 }
 
-.intro h2::after {
+.section-title::after {
     content: '';
     display: block;
     width: 300px;
     border-bottom: 1px dotted #ccc;
     position: absolute;
     bottom: -15px;
-    left: 50%; /* 왼쪽에서 50% 지점으로 이동 */
-    transform: translateX(-50%); /* 자신의 길이의 50 %만큼 왠쪽으로 이동해 중앙 정렬 */
+    left: 50%;
+    transform: translateX(-50%);
 }
-
 
 /* bridge-groom */
 
@@ -77,26 +81,6 @@ section {
 
 .contact-section {
     padding: 40px 20px;
-}
-
-.contact-section h2 {
-    font-family: "Gowun Dodum", sans-serif;
-    text-align: center;
-    font-size: 1.5em;
-    flex-shrink: 0; /* 공간이 좁아져도 글자가 줄어들지 않도록 */
-    position: relative;
-}
-
-.contact-section h2::after {
-    content: '';
-    display: block;
-    width: 300px;
-    border-bottom: 1px dotted #ccc;
-    position: absolute;
-    bottom: -15px;
-    left: 50%; /* 왼쪽에서 50% 지점으로 이동 */
-    transform: translateX(-50%); /* 자신의 길이의 50 %만큼 왠쪽으로 이동해 중앙 정렬 */
-
 }
 
 .contact-grid {
@@ -136,12 +120,6 @@ section {
 .calendar-container h3 {
     margin-bottom: 20px;
 }
-
-.divider {
-    border-bottom: 1px dotted #ccc;
-    width: 300px;
-    margin: 10px auto 30px; /* 좌우는 오토 조절 위아래는 10, 20 여백 */
-} /* 점선 */
 
 .calendar-grid {
     display: grid;
