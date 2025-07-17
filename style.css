@@ -37,7 +37,7 @@ body {
     box-sizing: border-box;
 }
 
-.section {
+section {
     margin-top: 60px;
     margin-bottom: 60px;
 }
@@ -76,8 +76,6 @@ body {
 /* contact-section */
 
 .contact-section {
-    align-items: baseline; /* 제목과 내용의 텍스트 밑줄을 맞추는 코드 */
-    gap: 30px; /* 제목과 연락처 묶음 사이의 간격 */
     padding: 40px 20px;
 }
 
@@ -243,14 +241,11 @@ body {
 
 /* gallery */
 
-.gallery {
-    text-align: center;
-    /* 자식 요소(gallery-block)들을 가로로 배치하기 */
+.gallery-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    margin-bottom: 55px;
 }
 
 /* 위에 30 px 공간 이미 잇음 */
