@@ -6,6 +6,141 @@ body {
     
 }
 
+/* 하단 고정 버튼 바 */
+.fixed-bottom-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* 하얀색이지만 반투명 하게 rgba( 빨 초 파 불투명도 ) */
+    backdrop-filter: blur(5px);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* 세로축 정렬 */
+    padding: 12px 0; /* 상하 여백 12 좌우는 0 */
+    z-index: 0;
+}
+
+.fixed-bottom-bar button {
+    background: none;
+    border: none;
+    font-size: 1.1em; /* 아이콘 크기 */
+    color: #333;
+    cursor: pointer; 
+}
+
+/* 링크 클릭시 부드럽게 이동 */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* 기본적으로 완전히 숨김 */
+    align-items: flex-end; /* 컨텐츠를 아래쪽으로 정렬 */
+    justify-content: center; /* 컨텐츠를 가운데로 정렬 */
+    z-index: 2000;
+}
+
+.modal-overlay.active {
+    display: flex; /* 활성화 시 보여줌 */
+}
+
+.action-sheet {
+    /* position: absolute; 와 transform, transition 속성 제거 */
+    width: 100%;
+    max-width: 700px; /* PC에서도 너무 넓어지지 않게 최대 너비 설정 */
+    background-color: #fdfaf6;
+    border-radius: 20px 20px 0 0;
+    padding: 20px 20px 30px 20px;
+    box-sizing: border-box;
+}
+
+.share-buttons-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 20px 0;
+    border-bottom: 1px solid #f0e9e4;
+}
+
+.share-buttons-container button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 0.9em;
+    color: #555;
+}
+
+#kakao-share-btn img {
+    width: 48px;
+    height: 48px;
+}
+
+.share-buttons-container button i {
+    font-size: 22px;
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    color: #333;
+}
+
+.action-sheet .close-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 15px;
+    border: none;
+    background-color: #f0e9e4;
+    border-radius: 12px;
+    font-size: 1em;
+    font-family: "Gowun Dodum", sans-serif;
+    color: #4e4e4e;
+    cursor: pointer;
+}
+
+/* --- QR코드 모달 (중앙 팝업 유지) --- */
+.qr-modal-content {
+    background-color: #fdfaf6;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+.qr-modal-content h3 {
+    margin-top: 0;
+}
+.qr-modal-content p {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+    line-height: 1.6;
+}
+#qr-code-display {
+    padding: 10px;
+    background-color: white;
+}
+
+/* QR 모달은 중앙 정렬을 위해 별도 스타일 지정 */
+#qr-code-modal {
+    align-items: center;
+    justify-content: center;
+}
+
 .hero-section {
     height: 100vh;
     background-image: url('images/202204291054249293_d.jpg');
@@ -342,12 +477,15 @@ section {
 
 .accordion-content .account-number {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* 이건 display flex 컨테이너 안의 내용물 정렬 할 때 씀 */
     align-items: center;
     margin-top: 5px;
 }
 
 .copy-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* flexbox, grid레이아웃에서 사용가능 */
     background-color: #e9e3e0;
     color: #555;
     border: none;
@@ -357,7 +495,7 @@ section {
     cursor: pointer;
 }
 
-.accrodion-item.active .accordion-header {
+.accordion-item.active .accordion-header {
     border-radius: 10px 10px 0 0;
 }
 

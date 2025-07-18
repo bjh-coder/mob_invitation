@@ -12,6 +12,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=East+Sea+Dokdo&family=Gowun+Dodum&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Song+Myung&family=Yeon+Sung&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="fixed-bottom-bar">
+        <button id="sound-btn" type="button"><i class="fa-solid fa-volume-high"></i></button>
+        <button id="toc-btn" type="button"><i class="fa-solid fa-bars"></i></button>
+        <button id="share-btn" type="button"><i class="fa-solid fa-share-nodes"></i></button>
+    </div>
+
+    <div id="toc-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>목차</h3>
+            <ul>
+                <li><a href="#intro" class="toc-link">초대합니다</a></li>
+                <li><a href="#contact-section" class="toc-link">연락하기</a></li>
+                <li><a href="#calendar-container" class="toc-link">달력보기</a></li>
+                <li><a href="#gallery" class="toc-link">갤러리</a></li>
+                <li><a href="#location" class="toc-link">오시는 길</a></li>
+                <li><a href="#account-info" class="toc-link">마음 전하실 곳</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="share-options-modal" class="modal-overlay">
+        <div class="action-sheet">
+            <div class="share-buttons-container">
+                <button id="kakao-share-btn">
+                    <span>카카오톡</span>
+                </button>
+                <button id="url-copy-btn">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>URL 복사</span>
+                </button>
+                <button id="qr-code-btn">
+                    <i class="fa-solid fa-qrcode"></i>
+                    <span>QR코드</span>
+                </button>
+            </div>
+            <button id="close-share-modal-btn" class="close-btn" type="button">닫기</button>
+        </div>
+    </div>
     <section class="hero-section">
         <div class="hero-content">
             <div class="top-names">
@@ -146,21 +184,21 @@
                             <p><strong>혼주 백남규</strong></p>
                             <p class="account-number">
                                 <span>국민은행 012-3456-789</span>
-                                <button class="copy-btn" type="button">복사</button>
+                                <button class="copy-btn" type="button"><i class="fa-regular fa-clone"></i>복사</button>
                             </p>
                         </div>
                         <div class="account-details">
                             <p><strong>혼주 김미리</strong></p>
                             <p class="account-number">
                                 <span>국민은행 012-3456-789</span>
-                                <button class="copy-btn" type="button">복사</button>
+                                <button class="copy-btn" type="button"><i class="fa-regular fa-clone"></i>복사</button>
                             </p>
                         </div>
                         <div class="account-details">
                             <p><strong>신랑 백재혁</strong></p>
                             <p class="account-number">
                                 <span>국민은행 012-3456-789</span>
-                                <button class="copy-btn" type="button">복사</button>
+                                <button class="copy-btn" type="button"><i class="fa-regular fa-clone"></i>복사</button>
                             </p>
                         </div>
                     </div>
@@ -175,21 +213,21 @@
                             <p><strong>혼주 백남규</strong></p>
                             <p class="account-number">
                                 <span>국민은행 012-3456-789</span>
-                                <button class="copy-btn" type="button">복사</button>
+                                <button class="copy-btn" type="button"><i class="fa-regular fa-clone"></i>복사</button>
                             </p>
                         </div>
                         <div class="account-details">
                             <p><strong>혼주 김미리</strong></p>
                             <p class="account-number">
                                 <span>국민은행 012-3456-789</span>
-                                <button class="copy-btn" type="button">복사</button>
+                                <button class="copy-btn" type="button"><i class="fa-regular fa-clone"></i>복사</button>
                             </p>
                         </div>
                         <div class="account-details">
                             <p><strong>신부 백진영</strong></p>
                             <p class="account-number">
                                 <span>국민은행 012-3456-789</span>
-                                <button class="copy-btn" type="button">복사</button>
+                                <button class="copy-btn" type="button"><i class="fa-regular fa-clone"></i>복사</button>
                             </p>
                         </div>
                     </div>
@@ -197,8 +235,9 @@
             </div>
         </section>
         <script src="date_calculate.js"></script>
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script src="script.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script><script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.5/kakao.min.js" integrity="sha384-dok87au0gKqJdxs7msEdBPNnKSRT+/mhTVzq+qOhcL464zXwvcrpjeWvyj1kCdq6" crossorigin="anonymous" defer></script>
+        <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js" defer></script>
+        <script src="script.js" defer></script>
     </div>
 </body>
 </html>
