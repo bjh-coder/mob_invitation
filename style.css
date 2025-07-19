@@ -20,7 +20,9 @@ body {
     justify-content: space-around;
     align-items: center; /* 세로축 정렬 */
     padding: 12px 0; /* 상하 여백 12 좌우는 0 */
-    z-index: 0;
+    z-index: 1000;
+    height: 60px;
+    box-sizing: border-box;
 }
 
 .fixed-bottom-bar button {
@@ -35,6 +37,43 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+#toc-menu {
+    position: fixed;
+    bottom: 60px; /* 하단 버튼 바의 높이만큼 띄우기 */
+    left: 0;
+    width: 100%;
+    background-color: #f7f2ec;
+    padding: 20px 0;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+    border-top: 1px solid #e9e3e0;
+
+    /* 애니메이션 효과 */
+    transform: translateY(100%); /* 기본적으로 아래에 숨김 */
+    transition: transform 0.4s ease-out;
+    z-index: 999;
+}
+
+#toc-menu.active {
+    transform: translateY(0); /* 액티브 클래스 추가되면 위로 올라오기 */
+}
+
+#toc-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#toc-menu li {
+    padding: 10px 0;
+}
+
+#toc-menu a {
+    text-decoration: none;
+    color: #4e4e4e;
+    font-size: 1.1em;
 }
 
 .modal-overlay {
